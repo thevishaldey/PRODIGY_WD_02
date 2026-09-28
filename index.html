@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stopwatch</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <button id="theme" class="theme-btn">Dark mode</button>
+
+  <div class="dial">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <circle class="face" cx="100" cy="100" r="96"/>
+      <g id="ticks"></g>
+      <line id="hand" x1="100" y1="100" x2="100" y2="14"/>
+      <circle class="hub" cx="100" cy="100" r="5"/>
+    </svg>
+    <div class="readout">
+      <div id="time" role="timer" aria-live="off">00:00.00</div>
+      <div id="lapnow">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="ctrls">
+    <button id="lap" disabled>Lap</button>
+    <button id="go">Start</button>
+    <button id="reset" disabled>Reset</button>
+  </div>
+
+  <section class="laps" aria-label="Lap times">
+    <h2>Laps</h2>
+    <div class="scroll" id="lapbox">
+      <div class="empty">Press Start, then Lap to record a split.</div>
+    </div>
+  </section>
+  <p class="hint">Keyboard: Space start/pause, L lap, R reset</p>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

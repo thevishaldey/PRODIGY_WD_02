@@ -1,0 +1,212 @@
+/* Colors */
+:root {
+  --bg: #e9eef2;
+  --panel: white;
+  --text: #14213d;
+  --muted: gray;
+  --line: #cbd5de;
+  --accent: #2b59ff;
+  --accent-text: white;
+  --fast: green;
+  --slow: red;
+}
+
+/* Dark mode colors */
+:root.dark {
+  --bg: #101a2e;
+  --panel: #182540;
+  --text: #e8eef7;
+  --muted: #93a2ba;
+  --line: #2a3b5c;
+  --accent: #6c8cff;
+  --accent-text: #0b1226;
+  --fast: #4cd08b;
+  --slow: #ff7a70;
+}
+
+/* Page */
+body {
+  margin: 0;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Dark mode button */
+.theme-btn {
+  display: block;
+  margin: 0 0 16px auto;
+  padding: 8px 14px;
+  font-size: 14px;
+  flex: none;
+}
+
+/* Dial */
+.dial {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.dial svg {
+  width: 100%;
+  height: 100%;
+}
+
+.face {
+  fill: var(--panel);
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+.tick {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+}
+
+.tick.major {
+  stroke: var(--text);
+  stroke-width: 3;
+}
+
+#hand {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.hub {
+  fill: var(--accent);
+}
+
+/* Time text inside the dial */
+.readout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+#time {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#lapnow {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Buttons */
+.ctrls {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+button {
+  flex: 1;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#go {
+  flex: 1.4;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Lap table */
+.laps {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.laps h2 {
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.scroll {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 16px;
+  text-align: right;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+th {
+  font-weight: normal;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+td {
+  border-top: 1px solid var(--line);
+}
+
+td.fast {
+  color: var(--fast);
+  font-weight: bold;
+}
+
+td.slow {
+  color: var(--slow);
+  font-weight: bold;
+}
+
+.empty {
+  padding: 20px 16px;
+  color: var(--muted);
+}
+
+.hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 16px;
+}
